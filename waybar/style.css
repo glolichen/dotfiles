@@ -71,8 +71,8 @@ window#waybar {
 #pulseaudio,
 #temperature,
 #tray {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 
@@ -106,6 +106,7 @@ window#waybar {
 
 #clock {
     font-weight: bold;
+	font-size: 15px;
 }
 
 #cpu {
@@ -177,6 +178,9 @@ window#waybar {
 
 #window {
     font-weight: bold;
+	font-size: 15px;
+	padding-left: 0.4em;
+	padding-right: 0.6em;
 }
 
 /* #workspaces button { */
@@ -199,7 +203,7 @@ window#waybar {
 #workspaces {
 	margin: 3px 7px 3px 3px;
 	border: 0px;
-	font-size: 14px;
+	font-size: 15px;
 	color: #e0def4;
 }
 
@@ -208,18 +212,24 @@ window#waybar {
 	margin: 2px 2px 2px 0px;
 	padding: 0px 6px 0px 6px;
 	color: #e0def4;
-	transition: all 0.2s ease-in-out;
+	transition: all 0.1s ease-in-out;
+}
+
+#workspaces button.visible {
+	color: #302e44;
+	background: #eeeaf6;
+	border-radius: 4px;
 }
 
 #workspaces button.active {
 	color: #302e44;
-	background: #cecae6;
+	background: #a0fea0;
 	border-radius: 4px;
 }
 
 #workspaces button:hover {
 	color: #302e44;
-	background: #cecae6;
+	background: #eeeaf6;
 	border-radius: 15px;
 }
 

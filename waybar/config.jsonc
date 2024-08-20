@@ -13,8 +13,8 @@
 
     "layer": "top",
 	"margin-top": 8,
-	"margin-left": 16,
-	"margin-right": 16,
+	"margin-left": 20,
+	"margin-right": 20,
 
     "position": "top",
 
@@ -22,8 +22,10 @@
     "height": 20,
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
 		// "backlight/slider"
+		"hyprland/window",
+		"wlr/taskbar"
     ],
     "modules-center": [
         "clock#date",
@@ -160,5 +162,25 @@
 		"min": 0,
 		"max": 10,
 		"orientation": "horizontal",
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": 20,
+		"all-outputs": true,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"rewrite": {
+			"Firefox Web Browser": "Firefox",
+			"Foot Server": "Terminal"
+		}
+	},
+	"hyprland/window": {
+		"format": "{class}",
+		"rewrite": {
+			"firefox": "Firefox",
+			"kitty": "Terminal",
+			"org.pwmt.zathura": "Zathura",
+		},
 	}
 }
