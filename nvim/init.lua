@@ -87,7 +87,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
+vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -286,8 +286,13 @@ require('lazy').setup({
 		},
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
 	},
-	{ 'catppuccin/nvim',          name = 'catppuccin', priority = 1000 },
-	{ 'ellisonleao/gruvbox.nvim', priority = 1000,     config = true },
+	{ 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
+	{
+		"gbprod/cutlass.nvim",
+		opts = {
+			cut_key = "m"
+		}
+	},
 	{
 		'nvim-tree/nvim-tree.lua',
 		version = '*',
@@ -1104,3 +1109,13 @@ require('lspconfig').clangd.setup {
 
 vim.opt.linebreak = true
 vim.g.vimtex_quickfix_open_on_warning = 0
+vim.g.tex_flavor = "latex"
+
+require("luasnip").config.set_config({
+	enable_autosnippets = true,
+	-- store_selection_keys = "<Tab>",
+})
+require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
+
+vim.cmd("imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'")
+-- ]]
