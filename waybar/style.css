@@ -106,7 +106,7 @@ window#waybar {
 
 #clock {
     font-weight: bold;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 #cpu {
@@ -178,9 +178,9 @@ window#waybar {
 
 #window {
     font-weight: bold;
-	font-size: 15px;
-	padding-left: 0.4em;
-	padding-right: 0.6em;
+	font-size: 14px;
+	padding-left: 0.25em;
+	padding-right: 0.4em;
 }
 
 /* #workspaces button { */
@@ -203,7 +203,7 @@ window#waybar {
 #workspaces {
 	margin: 3px 7px 3px 3px;
 	border: 0px;
-	font-size: 15px;
+	font-size: 14px;
 	color: #e0def4;
 }
 
