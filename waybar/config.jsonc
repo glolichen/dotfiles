@@ -98,7 +98,7 @@
 
     "pulseaudio": {
 		"scroll-step": 1,
-		"smooth-scrolling-threshold": 0.25,
+		"smooth-scrolling-threshold": 0.5,
 		"format": "{icon} {volume}%",
 		"format-bluetooth": "{icon} {volume}% ()",
 		"format-muted": "",
@@ -109,7 +109,7 @@
 			"phone": "",
 			"portable": "",
 			"car": "",
-			"default": ["", "", ""]
+			"default": ["", ""]
 		},
 		"on-click": "pavucontrol"
     },
@@ -164,7 +164,7 @@
 
 	"backlight": {
 		"scroll-step": 1,
-		"smooth-scrolling-threshold": 0.25,
+		"smooth-scrolling-threshold": 0.5,
 		"device": "intel_backlight",
 		"format": "{icon} {percent}%",
 		"format-icons": ["", ""]
