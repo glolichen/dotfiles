@@ -67,12 +67,13 @@ window#waybar {
 #custom-keyboard-layout,
 #memory,
 #mode,
-#network,
+#backlight,
 #pulseaudio,
-#temperature,
-#tray {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+#temperature {
+    /* padding-left: 0.5em; */
+    /* padding-right: 0.5em; */
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 
@@ -173,7 +174,8 @@ window#waybar {
 }
 
 #tray {
-    /* No styles */
+	padding-left: 6px;
+	padding-right: 4px;
 }
 
 #window {

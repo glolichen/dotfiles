@@ -5,7 +5,7 @@
 // Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
 //
 // =============================================================================
-
+// some stuff from https://github.com/vasujain275/.dotfiles/blob/main/.config/waybar/config.jsonc
 {
     // -------------------------------------------------------------------------
     // Global configuration
@@ -13,7 +13,6 @@
 
     "layer": "top",
 	"margin-top": 6,
-	// "margin-bottom": 4,
 	"margin-left": 12,
 	"margin-right": 12,
 
@@ -31,7 +30,7 @@
     ],
     "modules-right": [
 		"pulseaudio",
-        "network",
+        "backlight",
         "memory",
         "cpu",
         "temperature",
@@ -54,38 +53,30 @@
         // Connected to AC
         "format": " {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{capacity}%",
+        "format-discharging": "{icon} {capacity}%",
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip": true
     },
 
     "clock#time": {
         "interval": 1,
-        "format": "{:%H:%M:%S  }",
+        "format": "{:%H:%M:%S}",
         "tooltip": false
     },
 
     "clock#date": {
-      "interval": 10,
-      "format": " {:%m/%d}", // Icon: calendar-alt
-      "tooltip-format": "{:%m/%d}"
+		"interval": 10,
+		"format": " {:%m/%d}", // Icon: calendar-alt
+		"tooltip-format": "{:%m/%d}"
     },
 
     "cpu": {
         "interval": 5,
         "format": " {usage}%", // Icon: microchip
         "states": {
-          "warning": 70,
-          "critical": 90
+			"warning": 70,
+			"critical": 90
         }
-    },
-
-    "custom/keyboard-layout": {
-      // Interval set only as a fallback, as the value is updated by signal
-      "interval": 30,
-      "format": " {}", // Icon: keyboard
-      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-      "signal": 1, // SIGHUP
-      "tooltip": false
     },
 
     "memory": {
@@ -106,39 +97,34 @@
     },
 
     "pulseaudio": {
-       //"scroll-step": 1,
-       "format": "{icon} {volume}%",
-       "format-bluetooth": "{icon} {volume}% ()",
-       "format-muted": "",
-       "format-icons": {
-           "headphones": "",
-           "handsfree": "",
-           "headset": "",
-           "phone": "",
-           "portable": "",
-           "car": "",
-           "default": ["", ""]
-       },
-       "on-click": "pavucontrol"
+		"scroll-step": 1,
+		"smooth-scrolling-threshold": 0.25,
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}% ()",
+		"format-muted": "",
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
     },
 
     "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
+		"critical-threshold": 80,
+		"interval": 5,
+		"format": "{icon} {temperatureC}°C",
+		"format-icons": ["", "", "", "", ""],
+		"tooltip": true
     },
 
     "tray": {
-        "icon-size": 21,
-        "spacing": 10
+        "icon-size": 18,
+        "spacing": 12 
     },
 
     "hyprland/workspaces" : {
@@ -174,5 +160,13 @@
 			"firefox": "firefox",
 			"org.pwmt.zathura": "zathura",
 		},
+	},
+
+	"backlight": {
+		"scroll-step": 1,
+		"smooth-scrolling-threshold": 0.25,
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", ""]
 	}
 }

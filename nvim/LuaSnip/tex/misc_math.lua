@@ -64,14 +64,14 @@ return {
 	),
 	s({ trig = "floor", snippetType = "snippet" },
 		{
-			t("\\lfloor"),
+			t("\\lfloor "),
 			i(1),
 			t("\\rfloor"),
 		}
 	),
 	s({ trig = "ceil", snippetType = "snippet" },
 		{
-			t("\\lceil"),
+			t("\\lceil "),
 			i(1),
 			t("\\rceil"),
 		}

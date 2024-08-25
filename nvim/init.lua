@@ -1118,4 +1118,12 @@ require("luasnip").config.set_config({
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
 
 vim.cmd("imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'")
--- ]]
+
+-- https://www.reddit.com/r/neovim/comments/10ap5vt/comment/j45xg71/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "<up>", "v:count == 0 ? 'gk' : '<up>'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "<down>", "v:count == 0 ? 'gj' : '<down>'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<up>", "v:count == 0 ? '<c-o>gk' : '<up>'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("i", "<down>", "v:count == 0 ? '<c-o>gj' : '<down>'",
+	{ noremap = true, expr = true, silent = true })

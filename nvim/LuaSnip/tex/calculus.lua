@@ -13,8 +13,6 @@ return {
 		{
 			t("\\lim_{"),
 			i(1),
-			t(" \\to "),
-			i(2),
 			t("}"),
 		}
 	),
@@ -22,10 +20,8 @@ return {
 		{
 			t("\\lim_{"),
 			i(1),
-			t(" \\to "),
-			i(2),
 			t("}\\left["),
-			i(3),
+			i(2),
 			t("\\right]")
 		}
 	),
@@ -67,6 +63,20 @@ return {
 			t("\\right)\\mathrm{d}"),
 		}
 	),
+	s({ trig = "dint", snippetType = "snippet" },
+		{
+			t("\\int "),
+			i(1),
+			t("\\,\\mathrm{d}"),
+		}
+	),
+	s({ trig = "Dint", snippetType = "snippet" },
+		{
+			t("\\int\\left("),
+			i(1),
+			t("\\right)\\mathrm{d}"),
+		}
+	),
 	s({ trig = "sum", snippetType = "snippet" },
 		{
 			t("\\sum_{"),
@@ -79,6 +89,26 @@ return {
 	s({ trig = "Sum", snippetType = "snippet" },
 		{
 			t("\\sum_{"),
+			i(1),
+			t("}^{"),
+			i(2),
+			t("}\\left("),
+			i(3),
+			t("\\right)"),
+		}
+	),
+	s({ trig = "prod", snippetType = "snippet" },
+		{
+			t("\\prod_{"),
+			i(1),
+			t("}^{"),
+			i(2),
+			t("}"),
+		}
+	),
+	s({ trig = "Prod", snippetType = "snippet" },
+		{
+			t("\\prod_{"),
 			i(1),
 			t("}^{"),
 			i(2),
