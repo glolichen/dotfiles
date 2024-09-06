@@ -21,7 +21,7 @@
     "modules-left": [
         "hyprland/workspaces",
 		// "backlight/slider"
-		"hyprland/window",
+		// "hyprland/window",
 		"wlr/taskbar"
     ],
     "modules-center": [
@@ -38,11 +38,6 @@
         "battery",
         "tray",
     ],
-
-
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
 
     "battery": {
         "interval": 10,
@@ -67,7 +62,7 @@
     "clock#date": {
 		"interval": 10,
 		"format": " {:%m/%d}", // Icon: calendar-alt
-		"tooltip-format": "{:%m/%d}"
+		"tooltip-format": "{:%A, %Y-%m-%d}"
     },
 
     "cpu": {
@@ -88,39 +83,36 @@
         }
     },
 
-    "network": {
-        "interval": 5,
-        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}"
-    },
-
     "pulseaudio": {
 		"scroll-step": 1,
 		"smooth-scrolling-threshold": 0.5,
 		"format": "{icon} {volume}%",
-		"format-bluetooth": "{icon} {volume}% ()",
+		"format-bluetooth": " {volume}%",
 		"format-muted": "",
 		"format-icons": {
-			"headphones": "",
-			"handsfree": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
 			"default": ["", ""]
 		},
-		"on-click": "pavucontrol"
+		"on-click": "pavucontrol",
+		"tooltip": true
     },
 
     "temperature": {
+        "interval": 5,
 		"critical-threshold": 80,
-		"interval": 5,
+		"thermal-zone": 7,
 		"format": "{icon} {temperatureC}°C",
 		"format-icons": ["", "", "", "", ""],
 		"tooltip": true
     },
+
+	"backlight": {
+		"scroll-step": 1,
+		"smooth-scrolling-threshold": 0.5,
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", ""],
+		"tooltip": true
+	},
 
     "tray": {
         "icon-size": 18,
@@ -141,11 +133,6 @@
             "*": [1, 2, 3, 4, 5]
         }       
     },
-	"backlight/slider": {
-		"min": 0,
-		"max": 10,
-		"orientation": "horizontal",
-	},
 	"wlr/taskbar": {
 		"format": "{icon}",
 		"icon-size": 20,
@@ -155,18 +142,11 @@
 		"on-click-middle": "close",
 	},
 	"hyprland/window": {
-		"format": "{class}",
+		"format": "{initialTitle}",
 		"rewrite": {
-			"firefox": "firefox",
-			"org.pwmt.zathura": "zathura",
+			"Mozilla Firefox": "Firefox",
+			"zathura": "Zathura",
+			"kitty": "Kitty",
 		},
 	},
-
-	"backlight": {
-		"scroll-step": 1,
-		"smooth-scrolling-threshold": 0.5,
-		"device": "intel_backlight",
-		"format": "{icon} {percent}%",
-		"format-icons": ["", ""]
-	}
 }

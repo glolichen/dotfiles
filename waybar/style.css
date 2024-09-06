@@ -80,46 +80,44 @@ window#waybar {
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#clock {
+    font-weight: bold;
+	font-size: 14px;
+}
+
 
 #battery {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 #battery.warning {
     color: orange;
 }
-
 #battery.critical {
     color: red;
 }
-
 #battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
+    color: orange;
 }
-
 #battery.critical.discharging {
+	color: red;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
-#clock {
-    font-weight: bold;
-	font-size: 14px;
-}
-
 #cpu {
-  /* No styles */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
-
 #cpu.warning {
     color: orange;
 }
-
 #cpu.critical {
     color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
 #memory {
@@ -127,12 +125,24 @@ window#waybar {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 #memory.warning {
     color: orange;
 }
-
 #memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#temprature {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#temprature.warning {
+    color: orange;
+}
+#temprature.critical {
     color: red;
     animation-name: blink-critical;
     animation-duration: 2s;

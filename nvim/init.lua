@@ -1119,6 +1119,10 @@ require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/LuaSnip/" })
 
 vim.cmd("imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'")
 
+vim.g.Tex_SmartKeyQuote = 1
+vim.g.Tex_SmartQuoteOpen = "``"
+vim.g.Tex_SmartQuoteClose = "''"
+
 -- https://www.reddit.com/r/neovim/comments/10ap5vt/comment/j45xg71/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })

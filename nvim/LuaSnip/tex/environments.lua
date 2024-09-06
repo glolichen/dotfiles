@@ -9,6 +9,19 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 return {
+	s({ trig = "bit", snippetType = "snippet" },
+		{
+			t({
+				"\\begin{itemize}",
+				"    "
+			}),
+			i(1),
+			t({
+				"",
+				"\\end{itemize}"
+			}),
+		}
+	),
 	s({ trig = "bcas", snippetType = "snippet" },
 		{
 			t({
