@@ -74,7 +74,7 @@ return {
 			}),
 		}
 	),
-	s({ trig = "bsge", snippetType = "snippet" },
+	s({ trig = "bsga", snippetType = "snippet" },
 		{
 			t({
 				"\\begin{gather*}",

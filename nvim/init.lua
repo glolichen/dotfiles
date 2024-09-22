@@ -301,7 +301,12 @@ require('lazy').setup({
 			'nvim-tree/nvim-web-devicons',
 		},
 		config = function()
-			require('nvim-tree').setup {}
+			require('nvim-tree').setup {
+				git = {
+					ignore = false,
+				},
+
+			}
 		end,
 	},
 	{
@@ -1060,6 +1065,8 @@ local ft = require 'Comment.ft'
 ft.asm = '; %s'
 
 vim.api.nvim_set_keymap('n', '<c-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<c-f>', ':Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<c-g>', ':Telescope grep_string<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<c-q>', ':w<CR>:sp term://bash<CR>:res 10<CR>i', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<c-q>', '<c-\\><c-n>', { noremap = true, silent = true })
@@ -1122,6 +1129,14 @@ vim.cmd("imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' 
 vim.g.Tex_SmartKeyQuote = 1
 vim.g.Tex_SmartQuoteOpen = "``"
 vim.g.Tex_SmartQuoteClose = "''"
+
+local npairs = require('nvim-autopairs')
+local Rule = require('nvim-autopairs.rule')
+npairs.setup({
+	disable_filetype = { "tex" }, -- Disable autopairs for all filetypes by default
+	enable_check_bracket_line = false,
+	ignored_next_char = "",
+})
 
 -- https://www.reddit.com/r/neovim/comments/10ap5vt/comment/j45xg71/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })

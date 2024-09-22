@@ -27,16 +27,16 @@ return {
 	),
 	s({ trig = "dif", snippetType = "snippet" },
 		{
-			t("\\deriv{"),
+			t("\\deriv["),
 			i(1),
-			t("}"),
+			t("]"),
 		}
 	),
 	s({ trig = "Dif", snippetType = "snippet" },
 		{
-			t("\\deriv{"),
+			t("\\deriv["),
 			i(1),
-			t("}\\left["),
+			t("]\\left["),
 			i(2),
 			t("\\right]")
 		}
@@ -63,14 +63,14 @@ return {
 			t("\\right)\\mathrm{d}"),
 		}
 	),
-	s({ trig = "dint", snippetType = "snippet" },
+	s({ trig = "iint", snippetType = "snippet" },
 		{
 			t("\\int "),
 			i(1),
 			t("\\,\\mathrm{d}"),
 		}
 	),
-	s({ trig = "Dint", snippetType = "snippet" },
+	s({ trig = "Iint", snippetType = "snippet" },
 		{
 			t("\\int\\left("),
 			i(1),
@@ -92,9 +92,9 @@ return {
 			i(1),
 			t("}^{"),
 			i(2),
-			t("}\\left("),
+			t("}\\left["),
 			i(3),
-			t("\\right)"),
+			t("\\right]"),
 		}
 	),
 	s({ trig = "prod", snippetType = "snippet" },
@@ -112,9 +112,9 @@ return {
 			i(1),
 			t("}^{"),
 			i(2),
-			t("}\\left("),
+			t("}\\left["),
 			i(3),
-			t("\\right)"),
+			t("\\right]"),
 		}
 	),
 	s({ trig = "eval", snippetType = "snippet" },
@@ -122,6 +122,17 @@ return {
 			t("\\left."),
 			i(1),
 			t("\\right|_{"),
+			i(2),
+			t("}^{"),
+			i(3),
+			t("}")
+		}
+	),
+	s({ trig = "Eval", snippetType = "snippet" },
+		{
+			t("\\left["),
+			i(1),
+			t("\\right]_{"),
 			i(2),
 			t("}^{"),
 			i(3),
