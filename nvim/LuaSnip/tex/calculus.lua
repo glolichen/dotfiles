@@ -25,6 +25,16 @@ return {
 			t("\\right]")
 		}
 	),
+	s({ trig = "df", snippetType = "snippet" },
+		{
+			t("\\mathrm{d}"),
+		}
+	),
+	s({ trig = "Df", snippetType = "snippet" },
+		{
+			t("\\,\\mathrm{d}"),
+		}
+	),
 	s({ trig = "dif", snippetType = "snippet" },
 		{
 			t("\\deriv["),
