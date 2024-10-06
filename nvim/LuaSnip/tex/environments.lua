@@ -113,4 +113,30 @@ return {
 			}),
 		}
 	),
+	s({ trig = "bald", snippetType = "snippet" },
+		{
+			t({
+				"\\begin{aligned}",
+				"    "
+			}),
+			i(1),
+			t({
+				"",
+				"\\end{aligned}"
+			}),
+		}
+	),
+	s({ trig = "balt", snippetType = "snippet" },
+		{
+			t({
+				"$\\begin{aligned}[t]",
+				"    "
+			}),
+			i(1),
+			t({
+				"",
+				"\\end{aligned}$"
+			}),
+		}
+	),
 }

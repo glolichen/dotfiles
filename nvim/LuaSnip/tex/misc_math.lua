@@ -8,6 +8,19 @@ local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
+local c = ls.choice_node
+ls.add_snippets("tex", {
+	s("(", {
+		c(1, {
+			t("()"),
+			t("\\left(\\right)"),
+		}),
+		i(0),
+	}),
+}, {
+	type = "autosnippets",
+	key = "tex_parentheses",
+})
 return {
 	s({ trig = "(", snippetType = "snippet" },
 		{
@@ -16,13 +29,13 @@ return {
 			t("\\right)")
 		}
 	),
-	s({ trig = "[", snippetType = "snippet" },
-		{
-			t("\\left["),
-			i(1),
-			t("\\right]")
-		}
-	),
+	-- s({ trig = "[", snippetType = "snippet" },
+	-- 	{
+	-- 		t("\\left["),
+	-- 		i(1),
+	-- 		t("\\right")
+	-- 	}
+	-- ),
 	s({ trig = "$", snippetType = "snippet" },
 		{
 			t("\\("),
@@ -92,4 +105,4 @@ return {
 			t("\\right)"),
 		}
 	),
-}
+};

@@ -1130,19 +1130,25 @@ vim.g.Tex_SmartKeyQuote = 1
 vim.g.Tex_SmartQuoteOpen = "``"
 vim.g.Tex_SmartQuoteClose = "''"
 
-local npairs = require('nvim-autopairs')
-local Rule = require('nvim-autopairs.rule')
-npairs.setup({
-	disable_filetype = { "tex" }, -- Disable autopairs for all filetypes by default
-	enable_check_bracket_line = false,
-	ignored_next_char = "",
-})
+-- local npairs = require('nvim-autopairs')
+-- local Rule = require('nvim-autopairs.rule')
+-- npairs.setup({
+-- 	disable_filetype = { "tex" }, -- Disable autopairs for all filetypes by default
+-- 	enable_check_bracket_line = false,
+-- 	ignored_next_char = "",
+-- })
 
 -- https://www.reddit.com/r/neovim/comments/10ap5vt/comment/j45xg71/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "<up>", "v:count == 0 ? 'gk' : '<up>'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("n", "<down>", "v:count == 0 ? 'gj' : '<down>'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("i", "<up>", "v:count == 0 ? '<c-o>gk' : '<up>'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("i", "<down>", "v:count == 0 ? '<c-o>gj' : '<down>'",
-	{ noremap = true, expr = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<up>", "v:count == 0 ? '<c-o>gk' : '<up>'", { noremap = true, expr = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<down>", "v:count == 0 ? '<c-o>gj' : '<down>'",
+-- 	{ noremap = true, expr = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<C-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', {})
+vim.api.nvim_set_keymap('n', '<C-RightMouse>', '<Plug>(VM-Mouse-Word)', {})
+vim.api.nvim_set_keymap('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Column)', {})
+
+vim.keymap.set("n", "<F2>", vim.lsp.buf.rename)
