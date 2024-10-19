@@ -1152,3 +1152,8 @@ vim.api.nvim_set_keymap('n', '<C-RightMouse>', '<Plug>(VM-Mouse-Word)', {})
 vim.api.nvim_set_keymap('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Column)', {})
 
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename)
+
+vim.api.nvim_set_keymap("v", "<", "'<gv'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("v", ">", "'>gv'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", ">", "'>>'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "<", "'<<'", { noremap = true, expr = true, silent = true })

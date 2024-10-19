@@ -139,4 +139,17 @@ return {
 			}),
 		}
 	),
+	s({ trig = "bmat", snippetType = "snippet" },
+		{
+			t({
+				"\\begin{bmatrix}",
+				"    "
+			}),
+			i(1),
+			t({
+				"",
+				"\\end{bmatrix}"
+			}),
+		}
+	),
 }
