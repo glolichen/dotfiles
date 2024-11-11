@@ -136,7 +136,7 @@ vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 200
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -1163,7 +1163,8 @@ vim.api.nvim_set_keymap("n", "<M-C-RightMouse>", "<Plug>(VM-Mouse-Column)", {})
 
 vim.keymap.set("n", "<F2>", vim.lsp.buf.rename)
 
-vim.api.nvim_set_keymap("n", ">", "'>>'", { noremap = true, expr = true, silent = true })
-vim.api.nvim_set_keymap("n", "<", "'<<'", { noremap = true, expr = true, silent = true })
+local api = require("nvim-tree.api")
+vim.keymap.set("n", "<F3>", api.tree.toggle)
+
 vim.api.nvim_set_keymap("v", "<", "'<gv'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", "'>gv'", { noremap = true, expr = true, silent = true })
