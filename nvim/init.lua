@@ -155,7 +155,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 5
+vim.opt.scrolloff = 0
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -242,6 +242,11 @@ require("lazy").setup({
 	--    require('gitsigns').setup({ ... })
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^5", -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
