@@ -13,4 +13,10 @@
  - np-applet
  - Blueman
  - Waybar
+ - Foliate/Calibre
+ - Astrill
+ - Obsidian
+ - Virtual Machine Manager
+ - OBS Studio
+ - Krita
  - some others...
