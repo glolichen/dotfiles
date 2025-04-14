@@ -19,4 +19,5 @@
  - Virtual Machine Manager
  - OBS Studio
  - Krita
+ - Thunar
  - some others...
