@@ -71,6 +71,6 @@ return {
 		t("}"),
 	}),
 	s({ trig = "ds", snippetType = "snippet" }, {
-		t("\\displaystyle"),
+		t("\\displaystyle "),
 	}),
 }

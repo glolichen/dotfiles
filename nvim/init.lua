@@ -1173,13 +1173,3 @@ vim.keymap.set("n", "<F3>", api.tree.toggle)
 
 vim.api.nvim_set_keymap("v", "<", "'<gv'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", "'>gv'", { noremap = true, expr = true, silent = true })
-
-local function unbind_prefix_in_normal_mode(prefix)
-	for _, keymap in ipairs(vim.api.nvim_get_keymap("n")) do
-		if vim.startswith(keymap.lhs, prefix) then
-			vim.api.nvim_del_keymap("n", keymap.lhs)
-		end
-	end
-end
-
-unbind_prefix_in_normal_mode("s")
