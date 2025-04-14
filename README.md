@@ -1,0 +1,11 @@
+ - Fcitx
+ - Slack
+ - Discord
+ - WeChat
+ - Firefox
+ - LibreOffice
+ - Neovim
+ - VS Code
+ - Kitty
+ - QEMU
+ - Bochs
