@@ -9,3 +9,8 @@
  - Kitty
  - QEMU
  - Bochs
+ - Udiskie
+ - np-applet
+ - Blueman
+ - Waybar
+ - some others...
