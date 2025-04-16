@@ -48,8 +48,9 @@
 /* The whole bar */
 window#waybar {
 	background-color: rgba(31, 29, 46, 0.7);
-	font-family: FiraMono Nerd Font Propo;
-	font-size: 14px;
+	/* font-family: FiraCode Nerd Font; */
+	font-family: CaskaydiaMono NF;
+	font-size: 15px;
 	border-radius: 8px;
 }
 
@@ -83,7 +84,7 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 #clock {
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 15px;
 }
 
 
@@ -201,7 +202,7 @@ window#waybar {
 
 #window {
 	font-weight: bold;
-	font-size: 14px;
+	font-size: 15px;
 	padding-left: 0.25em;
 	padding-right: 0.4em;
 }
@@ -226,7 +227,7 @@ window#waybar {
 #workspaces {
 	margin: 3px 7px 3px 3px;
 	border: 0px;
-	font-size: 14px;
+	font-size: 15px;
 	color: #e0def4;
 }
 
