@@ -10,14 +10,19 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 return {
 	s({ trig = "par", snippetType = "snippet" }, {
-		t("\\left("),
+		t("\\left( "),
 		i(1),
-		t("\\right)"),
+		t(" \\right)"),
+	}),
+	s({ trig = "vec", snippetType = "snippet" }, {
+		t("\\left< "),
+		i(1),
+		t(" \\right>"),
 	}),
 	s({ trig = "bra", snippetType = "snippet" }, {
-		t("\\left["),
+		t("\\left[ "),
 		i(1),
-		t("\\right]"),
+		t(" \\right]"),
 	}),
 	s({ trig = "ff", snippetType = "snippet" }, {
 		t("\\frac{"),
@@ -72,5 +77,10 @@ return {
 	}),
 	s({ trig = "ds", snippetType = "snippet" }, {
 		t("\\displaystyle "),
+	}),
+	s({ trig = "nor", snippetType = "snippet" }, {
+		t("\\lVert "),
+		i(1),
+		t(" \\rVert "),
 	}),
 }
