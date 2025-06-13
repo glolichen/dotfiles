@@ -1,13 +1,13 @@
 --[[
 
-=====================================================================
+====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
 =====================================================================
 ========                                    .-----.          ========
 ========         .----------------------.   | === |          ========
 ========         |.-""""""""""""""""""-.|   |-----|          ========
 ========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
+========         ||   KICKSTART.V   ||   |-----|          ========
 ========         ||                    ||   | === |          ========
 ========         ||                    ||   |-----|          ========
 ========         ||:Tutor              ||   |:::::|          ========
@@ -247,7 +247,7 @@ require("lazy").setup({
 		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+	{             -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			signs = {
@@ -351,7 +351,7 @@ require("lazy").setup({
 	-- after the plugin has been loaded:
 	--  config = function() ... end
 
-	{ -- Useful plugin to show you pending keybinds.
+	{                 -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
 		config = function() -- This is the function that runs, AFTER loading
@@ -399,7 +399,7 @@ require("lazy").setup({
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
 		},
 		config = function()
 			-- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -495,7 +495,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ "Bilal2453/luvit-meta", lazy = true },
+	{ "Bilal2453/luvit-meta",     lazy = true },
 	{
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
@@ -507,7 +507,7 @@ require("lazy").setup({
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim", opts = {} },
+			{ "j-hui/fidget.nvim",       opts = {} },
 
 			-- Allows extra capabilities provided by nvim-cmp
 			"hrsh7th/cmp-nvim-lsp",
@@ -894,43 +894,43 @@ require("lazy").setup({
 		opts = { signs = false },
 	},
 
-	{ -- Collection of various small independent plugins/modules
-		"echasnovski/mini.nvim",
-		config = function()
-			-- Better Around/Inside textobjects
-			--
-			-- Examples:
-			--  - va)  - [V]isually select [A]round [)]paren
-			--  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-			--  - ci'  - [C]hange [I]nside [']quote
-			require("mini.ai").setup({ n_lines = 500 })
-
-			-- Add/delete/replace surroundings (brackets, quotes, etc.)
-			--
-			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-			-- - sd'   - [S]urround [D]elete [']quotes
-			-- - sr)'  - [S]urround [R]eplace [)] [']
-			require("mini.surround").setup()
-
-			-- Simple and easy statusline.
-			--  You could remove this setup call if you don't like it,
-			--  and try some other statusline plugin
-			local statusline = require("mini.statusline")
-			-- set use_icons to true if you have a Nerd Font
-			statusline.setup({ use_icons = vim.g.have_nerd_font })
-
-			-- You can configure sections in the statusline by overriding their
-			-- default behavior. For example, here we set the section for
-			-- cursor location to LINE:COLUMN
-			---@diagnostic disable-next-line: duplicate-set-field
-			statusline.section_location = function()
-				return "%2l:%-2v"
-			end
-
-			-- ... and there is more!
-			--  Check out: https://github.com/echasnovski/mini.nvim
-		end,
-	},
+	-- { -- Collection of various small independent plugins/modules
+	-- 	"echasnovski/mini.nvim",
+	-- 	config = function()
+	-- 		-- Better Around/Inside textobjects
+	-- 		--
+	-- 		-- Examples:
+	-- 		--  - va)  - [V]isually select [A]round [)]paren
+	-- 		--  - yinq - [Y]ank [I]nside [N]ext [Q]uote
+	-- 		--  - ci'  - [C]hange [I]nside [']quote
+	-- 		require("mini.ai").setup({ n_lines = 500 })
+	--
+	-- 		-- Add/delete/replace surroundings (brackets, quotes, etc.)
+	-- 		--
+	-- 		-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+	-- 		-- - sd'   - [S]urround [D]elete [']quotes
+	-- 		-- - sr)'  - [S]urround [R]eplace [)] [']
+	-- 		require("mini.surround").setup()
+	--
+	-- 		-- Simple and easy statusline.
+	-- 		--  You could remove this setup call if you don't like it,
+	-- 		--  and try some other statusline plugin
+	-- 		local statusline = require("mini.statusline")
+	-- 		-- set use_icons to true if you have a Nerd Font
+	-- 		statusline.setup({ use_icons = vim.g.have_nerd_font })
+	--
+	-- 		-- You can configure sections in the statusline by overriding their
+	-- 		-- default behavior. For example, here we set the section for
+	-- 		-- cursor location to LINE:COLUMN
+	-- 		---@diagnostic disable-next-line: duplicate-set-field
+	-- 		statusline.section_location = function()
+	-- 			return "%2l:%-2v"
+	-- 		end
+	--
+	-- 		-- ... and there is more!
+	-- 		--  Check out: https://github.com/echasnovski/mini.nvim
+	-- 	end,
+	-- },
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -1173,3 +1173,5 @@ vim.keymap.set("n", "<F3>", api.tree.toggle)
 
 vim.api.nvim_set_keymap("v", "<", "'<gv'", { noremap = true, expr = true, silent = true })
 vim.api.nvim_set_keymap("v", ">", "'>gv'", { noremap = true, expr = true, silent = true })
+
+vim.api.nvim_set_keymap("i", "jj", "<ESC>", { silent = true })
