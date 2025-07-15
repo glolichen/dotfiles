@@ -12,14 +12,6 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 export PATH="$PATH:/home/jayden/opt/cross/bin/:/home/jayden/miniconda3/bin/"
 
-cowname=$(ls /usr/share/cowsay/cows/ | xargs shuf -n1 -e)
-cowname=${cowname::-4}
-
-echo "($cowname)"
-
-fortune | cowsay -f $cowname
-unset cowname
-
 . "$HOME/.local/share/../bin/env"
 
 # >>> conda initialize >>>
@@ -37,3 +29,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export IDF_PATH="~/esp/esp-idf/"
+export PATH="$PATH:$HOME/esp/xtensa-lx106-elf/bin"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init - bash)"
+fi
+
+cowname=$(ls /usr/share/cowsay/cows/ | xargs shuf -n1 -e)
+cowname=${cowname::-4}
+echo "($cowname)"
+fortune | cowsay -f $cowname
+unset cowname
+
+# lilota run:
+# source ~/esp/esp-idf/export.sh
+#

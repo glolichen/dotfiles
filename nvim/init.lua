@@ -243,11 +243,10 @@ require("lazy").setup({
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
 	{
-		"mrcjkb/rustaceanvim",
-		version = "^5", -- Recommended
-		lazy = false, -- This plugin is already lazy
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
 	},
-	{             -- Adds git related signs to the gutter, as well as utilities for managing changes
+	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			signs = {
@@ -261,9 +260,6 @@ require("lazy").setup({
 	},
 	{
 		"numToStr/Comment.nvim",
-		opts = {
-			-- add any options here
-		},
 	},
 	{
 		"lervag/vimtex",
@@ -351,7 +347,7 @@ require("lazy").setup({
 	-- after the plugin has been loaded:
 	--  config = function() ... end
 
-	{                 -- Useful plugin to show you pending keybinds.
+	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
 		config = function() -- This is the function that runs, AFTER loading
@@ -399,7 +395,7 @@ require("lazy").setup({
 			{ "nvim-telescope/telescope-ui-select.nvim" },
 
 			-- Useful for getting pretty icons, but requires a Nerd Font.
-			{ "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
 		config = function()
 			-- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -495,7 +491,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	{ "Bilal2453/luvit-meta",     lazy = true },
+	{ "Bilal2453/luvit-meta", lazy = true },
 	{
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
@@ -507,7 +503,7 @@ require("lazy").setup({
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-			{ "j-hui/fidget.nvim",       opts = {} },
+			{ "j-hui/fidget.nvim", opts = {} },
 
 			-- Allows extra capabilities provided by nvim-cmp
 			"hrsh7th/cmp-nvim-lsp",
@@ -1125,9 +1121,9 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 
-require("lspconfig").clangd.setup({
-	filetypes = { "c", "cpp", "h", "hpp" },
-})
+-- require("lspconfig").clangd.setup({
+-- 	filetypes = { "c", "cpp", "h", "hpp" },
+-- })
 
 vim.opt.linebreak = true
 vim.g.vimtex_quickfix_open_on_warning = 0
@@ -1175,3 +1171,26 @@ vim.api.nvim_set_keymap("v", "<", "'<gv'", { noremap = true, expr = true, silent
 vim.api.nvim_set_keymap("v", ">", "'>gv'", { noremap = true, expr = true, silent = true })
 
 vim.api.nvim_set_keymap("i", "jj", "<ESC>", { silent = true })
+
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+	dynamicRegistration = false,
+	lineFoldingOnly = true,
+}
+local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+for _, ls in ipairs(language_servers) do
+	require("lspconfig")[ls].setup({
+		capabilities = capabilities,
+		-- you can add other fields for setting up lsp server in this table
+	})
+end
+require("ufo").setup()
