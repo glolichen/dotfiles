@@ -1,0 +1,5 @@
+[mgr]
+prepend_keymap = [
+	{ on = "<Esc>", run = "quit", desc = "Quit" },
+]
+
