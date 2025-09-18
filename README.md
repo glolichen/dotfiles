@@ -19,6 +19,7 @@
  - Virtual Machine Manager
  - OBS Studio
  - Krita
+ - pavucontrol
  - Thunar (install gvfs)
  - some others...
 
