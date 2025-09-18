@@ -21,3 +21,7 @@
  - Krita
  - Thunar (install gvfs)
  - some others...
+
+Must use pipewire, pipewire-alsa, pipewire-pulse, etc. When the "bad" happens, check if @DEFAULT_SINK@ in pulse is correct.
+
+Useful commands: `pactl info sinks` `pactl get-default-sink` etc etc...
