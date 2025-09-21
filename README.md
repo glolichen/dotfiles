@@ -72,3 +72,12 @@ Exec=hyprctl keyword monitor "eDP-1, preferred, auto, 1.25, mirror, eDP-1"
 Type=Application
 StartupNotify=true
 ```
+
+`restart_wireplumber.desktop`:
+```
+[Desktop Entry]
+Name=Restart Wireplumber
+Exec=systemctl --user restart wireplumber
+Type=Application
+StartupNotify=true
+```
