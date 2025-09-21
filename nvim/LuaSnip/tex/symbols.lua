@@ -9,6 +9,9 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 return {
+	s({ trig = ";D", snippetType = "snippet" }, {
+		t("\\Delta"),
+	}),
 	s({ trig = ";a", snippetType = "snippet" }, {
 		t("\\alpha"),
 	}),
@@ -29,6 +32,12 @@ return {
 	}),
 	s({ trig = ";t", snippetType = "snippet" }, {
 		t("\\theta"),
+	}),
+	s({ trig = ";o", snippetType = "snippet" }, {
+		t("\\omega"),
+	}),
+	s({ trig = ";m", snippetType = "snippet" }, {
+		t("\\mu"),
 	}),
 	s({ trig = ";i", snippetType = "snippet" }, {
 		t("\\infty"),
