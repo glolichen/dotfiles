@@ -81,3 +81,12 @@ Exec=systemctl --user restart wireplumber
 Type=Application
 StartupNotify=true
 ```
+
+`restart_waybar.desktop`:
+```
+[Desktop Entry]
+Name=Restart Waybar
+Exec=killall waybar; waybar & disown
+Type=Application
+StartupNotify=true
+```
