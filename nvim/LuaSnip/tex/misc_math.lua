@@ -83,4 +83,9 @@ return {
 		i(1),
 		t(" \\rVert "),
 	}),
+	s({ trig = "Nor", snippetType = "snippet" }, {
+		t("\\left\\lVert "),
+		i(1),
+		t(" \\right\\rVert "),
+	}),
 }
