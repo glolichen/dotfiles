@@ -22,6 +22,7 @@
  - pavucontrol
  - Thunar (install gvfs)
  - hyprpolkitagent
+ - hyprshot/hyprfreeze
  - some others...
 
 Must use pipewire, pipewire-alsa, pipewire-pulse, etc. When the "bad" happens, check if @DEFAULT_SINK@ in pulse is correct.
