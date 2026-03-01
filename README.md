@@ -76,11 +76,10 @@ Type=Application
 StartupNotify=true
 ```
 
-`restart_wireplumber.desktop`:
-```
-[Desktop Entry]
-Name=Restart Wireplumber
-Exec=systemctl --user restart wireplumber
-Type=Application
-StartupNotify=true
-```
+in `/etc/udev/rules.d/`:
+
+`60-onbattery.rules`: `ACTION=="change", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/bin/tlp bat"`
+`61-onpower.rules`: `ACTION=="change", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/bin/tlp ac"`
+
+use `tlpui` to configure bat and ac rules
+

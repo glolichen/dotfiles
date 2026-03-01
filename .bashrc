@@ -12,7 +12,7 @@ PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 export PATH="$PATH:/home/jayden/opt/cross/bin/:/home/jayden/miniconda3/bin/"
 
-. "$HOME/.local/share/../bin/env"
+# . "$HOME/.local/share/../bin/env"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

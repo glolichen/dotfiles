@@ -41,7 +41,8 @@
 * {
 	border: none;
 	border-radius: 0;
-	min-height: 0;
+	/* min-height: 22px; */
+	/* min-height: 24px; */
 	margin: 0;
 }
 
@@ -225,7 +226,7 @@ window#waybar {
 /* } */
 
 #workspaces {
-	margin: 3px 7px 3px 3px;
+	margin: 3px 6px 3px 6px;
 	border: 0px;
 	font-size: 15px;
 	color: #e0def4;
@@ -233,8 +234,8 @@ window#waybar {
 
 #workspaces button {
 	border: 0px;
-	margin: 2px 2px 2px 0px;
-	padding: 0px 6px 0px 6px;
+	margin: 2px 0px 2px 0px;
+	padding: 1px 0px 0px 0px;
 	color: #e0def4;
 	transition: all 0.1s ease-in-out;
 }

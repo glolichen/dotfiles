@@ -50,7 +50,8 @@
         // Not connected to AC
         "format-discharging": "{icon} {capacity}%",
 		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "tooltip": true
+        "tooltip": true,
+		"bat": 0
     },
 
     "clock#time": {
@@ -100,7 +101,7 @@
     "temperature": {
         "interval": 5,
 		"critical-threshold": 80,
-		"thermal-zone": 7,
+		"thermal-zone": 0,
 		"format": "{icon} {temperatureC}°C",
 		"format-icons": ["", "", "", "", ""],
 		"tooltip": true
