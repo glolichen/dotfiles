@@ -1,4 +1,4 @@
- - Fcitx
+ - Fcitx (`fcitx5-im fcitx5-gtk fcitx5-qt fcitx5-chinese-addons fcitx5-pinyin-zhwiki`)
  - Slack
  - Discord
  - WeChat
