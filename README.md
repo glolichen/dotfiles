@@ -76,6 +76,15 @@ Type=Application
 StartupNotify=true
 ```
 
+`reload_hyprland.desktop`:
+```
+[Desktop Entry]
+Name=Reload Hyprland
+Exec=hyprctl reload
+Type=Application
+StartupNotify=true
+```
+
 in `/etc/udev/rules.d/`:
 
 `60-onbattery.rules`: `ACTION=="change", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="/bin/tlp bat"`
