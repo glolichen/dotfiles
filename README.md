@@ -44,7 +44,6 @@ StartupWMClass=Discord
 Exec=/home/jayden/Documents/Discord/Discord %U
 Type=Application
 StartupNotify=true
-MimeType=x-scheme-handler/slack;
 ```
 
 ## Utilities
