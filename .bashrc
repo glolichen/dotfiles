@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 eval "$(starship init bash)"
-export PATH="$PATH:/home/jayden/opt/cross/bin/:/home/jayden/miniconda3/bin/"
+export PATH="$PATH:/home/jayden/opt/cross/bin/:/home/jayden/miniconda3/bin/:/home/jayden/.cargo/bin/"
 
 # . "$HOME/.local/share/../bin/env"
 
