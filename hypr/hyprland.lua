@@ -258,7 +258,7 @@ hl.config({
 		-- Your old kb_rules = was empty.
 		kb_rules = "",
 
-		sensitivity = 0.3,
+		sensitivity = 0,
 		accel_profile = "flat",
 
 		touchpad = {
