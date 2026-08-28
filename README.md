@@ -61,18 +61,18 @@ StartupNotify=true
 ```
 [Desktop Entry]
 Name=Disable Integrated Monitor
-Exec=hyprctl keyword monitor "eDP-1, disable"
+Exec=hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = true })'
 Type=Application
-StartupNotify=true
+StartupNotify=true`
 ```
 
 `enable_integrated.desktop`:
 ```
 [Desktop Entry]
 Name=Enable Integrated Monitor
-Exec=hyprctl keyword monitor "eDP-1, preferred, auto, 1.25, mirror, eDP-1"
+Exec=hyprctl eval 'hl.monitor({ output = "eDP-1", disabled = false })'
 Type=Application
-StartupNotify=true
+StartupNotify=true`
 ```
 
 `reload_hyprland.desktop`:
@@ -90,4 +90,10 @@ in `/etc/udev/rules.d/`:
 `61-onpower.rules`: `ACTION=="change", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="/bin/tlp ac"`
 
 use `tlpui` to configure bat and ac rules
+
+For Harvard eduroam: 
+
+- NetworkManager use wpa_supplicent (instead of iwd; iwd cannot connect after configuration: WPA 802.1x failure)
+- DHCPCD does not work: crash / bad syscall on connection
+- Connection itself works but no ping / internet connection because no DHCH; use NetworkManager builtin DHCP server by killing and disabling DHCP
 
