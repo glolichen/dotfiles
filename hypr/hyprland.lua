@@ -410,7 +410,7 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot --freeze -m region 
 hl.bind(
 	"XF86MonBrightnessUp",
 	hl.dsp.exec_cmd(
-		'brightnessctl s +2% && notify-send "Brightness ($(light)%)" -h int:value:$(light) -h string:synchronous:brightness --urgency low'
+		'brightnessctl s +5% && notify-send "Brightness ($(light)%)" -h int:value:$(light) -h string:synchronous:brightness --urgency low'
 	),
 	{
 		repeating = true,
@@ -420,7 +420,7 @@ hl.bind(
 hl.bind(
 	"XF86MonBrightnessDown",
 	hl.dsp.exec_cmd(
-		'brightnessctl s 2%- && notify-send "Brightness ($(light)%)" -h int:value:$(light) -h string:synchronous:brightness --urgency low'
+		'brightnessctl s 5%- && notify-send "Brightness ($(light)%)" -h int:value:$(light) -h string:synchronous:brightness --urgency low'
 	),
 	{
 		repeating = true,
@@ -517,6 +517,17 @@ hl.window_rule({
 	float = true,
 	size = { 400, 600 },
 })
+
+-- hl.window_rule({
+-- 	name = "QEMU",
+--
+-- 	match = {
+-- 		class = "qemu-system-x86_64",
+-- 	},
+--
+-- 	float = true,
+-- 	size = { 400, 600 },
+-- })
 
 --------------------------------------------------------------------------------
 -- LAYER RULES
